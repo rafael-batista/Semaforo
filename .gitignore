@@ -1,0 +1,2 @@
+#Ignorar arquivo com extensão .pro.user
+*.pro.user
