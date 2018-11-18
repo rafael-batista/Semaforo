@@ -9,5 +9,6 @@
         <file>resources/semaforoPedestreVermelho.png</file>
         <file>resources/semaforoVerde.png</file>
         <file>resources/semaforoVermelho.png</file>
+        <file>resources/semaforoPedestreDesabilitado.png</file>
     </qresource>
 </RCC>

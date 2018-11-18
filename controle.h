@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QPixmap>
 #include <QTimer>
+#include <QTime>
+#include <Windows.h>
 
 namespace Ui {
 class Controle;
@@ -19,11 +21,12 @@ public:
     ~Controle();
 
 public slots:
-    void AmareloIntermitente0();
-    void AmareloIntermitente1();
+    void AmareloIntermitente();
 
 private slots:
     void on_bt_acionar_clicked();
+
+    void delay(int millisecondsToWait);
 
 private:
     Ui::Controle *ui;
