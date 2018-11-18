@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>900</width>
     <height>500</height>
    </rect>
   </property>
@@ -14,46 +14,379 @@
    <string>Controle</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QLabel" name="lbl_mapa">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>190</y>
-      <width>93</width>
-      <height>28</height>
+      <x>0</x>
+      <y>0</y>
+      <width>900</width>
+      <height>500</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/mapa.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QSplitter" name="splitter">
+   <widget class="QLabel" name="lbl_semaforo1">
     <property name="geometry">
      <rect>
-      <x>485</x>
-      <y>390</y>
-      <width>281</width>
-      <height>28</height>
+      <x>580</x>
+      <y>230</y>
+      <width>21</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+    <property name="text">
+     <string/>
     </property>
-    <widget class="QComboBox" name="comboBox"/>
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoDesligado.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
+   <widget class="QComboBox" name="cmb_comandos">
+    <property name="geometry">
+     <rect>
+      <x>385</x>
+      <y>410</y>
+      <width>430</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>1. Fechamento do cruzamento de veículos</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2. Abertura do cruzamento de veículos</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3. Sinal de alerta</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4. Abertura do cruzamento de pedestres</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5. Fechamento do cruzamento de pedestres</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>6. Sinal de alerta para fechamento do cruzamento de pedestres</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>7.  Abertura do cruzamento de veículos parar virar à esquerda</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>8. Fechamento do cruzamento de veículos para virar à esquerda</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="bt_acionar">
+    <property name="geometry">
+     <rect>
+      <x>815</x>
+      <y>410</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Acionar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforo2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>150</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoDesligado.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforo7">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>110</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoDesligado.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforo3_norte">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>190</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoDesligado.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforo3_sul">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>250</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoDesligado.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforo4">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>240</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoDesligado.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforo6">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>180</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoDesligado.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforoPedestre2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>180</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoPedestreCompleto.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforoPedestre1">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>230</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoPedestreCompleto.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforoPedestre6">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>200</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoPedestreCompleto.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforoPedestre7">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>130</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoPedestreCompleto.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforoPedestre4">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>240</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoPedestreCompleto.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforoPedestre3_norte">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>210</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoPedestreCompleto.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_semaforoPedestre3_sul">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>250</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/resources/semaforoPedestreCompleto.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>lbl_mapa</zorder>
+   <zorder>cmb_comandos</zorder>
+   <zorder>bt_acionar</zorder>
+   <zorder>lbl_semaforo1</zorder>
+   <zorder>lbl_semaforo2</zorder>
+   <zorder>lbl_semaforo7</zorder>
+   <zorder>lbl_semaforo3_norte</zorder>
+   <zorder>lbl_semaforo3_sul</zorder>
+   <zorder>lbl_semaforo4</zorder>
+   <zorder>lbl_semaforo6</zorder>
+   <zorder>lbl_semaforoPedestre2</zorder>
+   <zorder>lbl_semaforoPedestre1</zorder>
+   <zorder>lbl_semaforoPedestre6</zorder>
+   <zorder>lbl_semaforoPedestre7</zorder>
+   <zorder>lbl_semaforoPedestre4</zorder>
+   <zorder>lbl_semaforoPedestre3_norte</zorder>
+   <zorder>lbl_semaforoPedestre3_sul</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>26</height>
+     <width>900</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/mapa.png</file>
+        <file>resources/semaforoAmarelo.png</file>
+        <file>resources/semaforoCompleto.png</file>
+        <file>resources/semaforoDesligado.png</file>
+        <file>resources/semaforoPedestreCompleto.png</file>
+        <file>resources/semaforoPedestreVerde.png</file>
+        <file>resources/semaforoPedestreVermelho.png</file>
+        <file>resources/semaforoVerde.png</file>
+        <file>resources/semaforoVermelho.png</file>
+    </qresource>
+</RCC>
