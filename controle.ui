@@ -93,7 +93,7 @@
     </item>
     <item>
      <property name="text">
-      <string>7.  Abertura do cruzamento de veículos parar virar à esquerda</string>
+      <string>7. Abertura do cruzamento de veículos parar virar à esquerda</string>
      </property>
     </item>
     <item>
@@ -362,6 +362,177 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="lbl_via6">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>220</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 6</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_via7">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>160</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 7</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_via6_2">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>160</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 6</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_via1">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>270</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_via5">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>270</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_via3">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>180</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_via4">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>280</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_via3_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>300</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_via7_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>130</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Via 2</string>
+    </property>
+   </widget>
    <zorder>lbl_mapa</zorder>
    <zorder>cmb_comandos</zorder>
    <zorder>bt_acionar</zorder>
@@ -379,6 +550,15 @@
    <zorder>lbl_semaforoPedestre4</zorder>
    <zorder>lbl_semaforoPedestre3_norte</zorder>
    <zorder>lbl_semaforoPedestre3_sul</zorder>
+   <zorder>lbl_via6</zorder>
+   <zorder>lbl_via7</zorder>
+   <zorder>lbl_via6_2</zorder>
+   <zorder>lbl_via1</zorder>
+   <zorder>lbl_via5</zorder>
+   <zorder>lbl_via3</zorder>
+   <zorder>lbl_via4</zorder>
+   <zorder>lbl_via3_2</zorder>
+   <zorder>lbl_via7_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

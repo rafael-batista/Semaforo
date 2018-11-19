@@ -6,7 +6,9 @@
 #include <QPixmap>
 #include <QTimer>
 #include <QTime>
-#include <Windows.h>
+#include <thread>
+
+using namespace std;
 
 namespace Ui {
 class Controle;
@@ -23,6 +25,12 @@ public:
 public slots:
     void AmareloIntermitente();
 
+    void ConfiguracaoInicial();
+
+    void Semaforos_1_2_3_4();
+
+    void Semaforos_6_7();
+
 private slots:
     void on_bt_acionar_clicked();
 
@@ -30,7 +38,12 @@ private slots:
 
 private:
     Ui::Controle *ui;
-    QTimer *tempo;
+    QTimer *SinalDeAlerta;
+    QTimer *ConfigInicial_Semaforos_1_2_3_4;
+    QTimer *ConfigInicial_Semaforos_6_7;
+    QTimer *ConfigInicial_Pedestre_1_2_3;
+    QTimer *ConfigInicial_Pedestre_6_7;
+
 };
 
 #endif // CONTROLE_H

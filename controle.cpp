@@ -6,11 +6,69 @@ Controle::Controle(QWidget *parent) :
     ui(new Ui::Controle)
 {
     ui->setupUi(this);
+
+    ConfigInicial_Semaforos_1_2_3_4 = new QTimer(this);
+    connect(ConfigInicial_Semaforos_1_2_3_4,SIGNAL(timeout()),this,SLOT(Semaforos_1_2_3_4()));
+    ConfigInicial_Semaforos_1_2_3_4->start(2250);
+
+    ConfigInicial_Pedestre_6_7 = new QTimer(this);
+    connect(ConfigInicial_Pedestre_6_7,SIGNAL(timeout()),this,SLOT(Semaforos_6_7()));
+    ConfigInicial_Pedestre_6_7->start(2250);
 }
 
 Controle::~Controle()
 {
     delete ui;
+}
+
+void Controle::Semaforos_1_2_3_4(){
+    QPixmap semaforoVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoVermelho.png");
+    QPixmap semaforoAmarelo("D:/Rafael Documentos/Documents/Git/resources/semaforoAmarelo.png");
+    QPixmap semaforoVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoVerde.png");
+
+    ui->lbl_semaforo1->setPixmap(semaforoVerde);
+    ui->lbl_semaforo2->setPixmap(semaforoVerde);
+    ui->lbl_semaforo3_norte->setPixmap(semaforoVerde);
+    ui->lbl_semaforo3_sul->setPixmap(semaforoVerde);
+    ui->lbl_semaforo4->setPixmap(semaforoVerde);
+    delay(1500);
+
+    ui->lbl_semaforo1->setPixmap(semaforoAmarelo);
+    ui->lbl_semaforo2->setPixmap(semaforoAmarelo);
+    ui->lbl_semaforo3_norte->setPixmap(semaforoAmarelo);
+    ui->lbl_semaforo3_sul->setPixmap(semaforoAmarelo);
+    ui->lbl_semaforo4->setPixmap(semaforoAmarelo);
+    delay(750);
+
+    ui->lbl_semaforo1->setPixmap(semaforoVermelho);
+    ui->lbl_semaforo2->setPixmap(semaforoVermelho);
+    ui->lbl_semaforo3_norte->setPixmap(semaforoVermelho);
+    ui->lbl_semaforo3_sul->setPixmap(semaforoVermelho);
+    ui->lbl_semaforo4->setPixmap(semaforoVermelho);
+}
+
+void Controle::Semaforos_6_7(){
+    QPixmap semaforoVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoVermelho.png");
+    QPixmap semaforoAmarelo("D:/Rafael Documentos/Documents/Git/resources/semaforoAmarelo.png");
+    QPixmap semaforoVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoVerde.png");
+
+    ui->lbl_semaforo6->setPixmap(semaforoVermelho);
+    ui->lbl_semaforo7->setPixmap(semaforoVermelho);
+    delay(1500);
+
+    ui->lbl_semaforo6->setPixmap(semaforoVerde);
+    ui->lbl_semaforo7->setPixmap(semaforoVerde);
+    delay(1500);
+
+    ui->lbl_semaforo6->setPixmap(semaforoAmarelo);
+    ui->lbl_semaforo7->setPixmap(semaforoAmarelo);
+    delay(750);
+
+
+}
+
+void Controle::ConfiguracaoInicial(){
+    Semaforos_6_7();
 }
 
 void Controle::AmareloIntermitente()
@@ -33,8 +91,7 @@ void Controle::AmareloIntermitente()
     ui->lbl_semaforoPedestre4->setPixmap(semaforoPedestreVermelho);
     ui->lbl_semaforoPedestre6->setPixmap(semaforoPedestreVermelho);
     ui->lbl_semaforoPedestre7->setPixmap(semaforoPedestreVermelho);
-    qDebug() << "Fim da execução da função SemaforoAmarelo()";
-    delay(25);
+    delay(10);
 
     QPixmap semaforoDesligado("D:/Rafael Documentos/Documents/Git/resources/semaforoDesligado.png");
     QPixmap semaforoPedestreDesligado("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreDesabilitado.png");
@@ -54,8 +111,7 @@ void Controle::AmareloIntermitente()
     ui->lbl_semaforoPedestre4->setPixmap(semaforoPedestreDesligado);
     ui->lbl_semaforoPedestre6->setPixmap(semaforoPedestreDesligado);
     ui->lbl_semaforoPedestre7->setPixmap(semaforoPedestreDesligado);
-    qDebug() << "Fim da execução da função SemaforoDesabilitado()";
-    delay(25);
+    delay(10);
 }
 
 void Controle::on_bt_acionar_clicked()
@@ -71,12 +127,20 @@ void Controle::on_bt_acionar_clicked()
     }
 
     if(ui->cmb_comandos->currentText() == "3. Sinal de alerta"){
+        if(ConfigInicial_Semaforos_1_2_3_4){
+            delete ConfigInicial_Semaforos_1_2_3_4;
+        }
+
+        if(ConfigInicial_Pedestre_6_7){
+            delete ConfigInicial_Pedestre_6_7;
+        }
+
         qDebug() << "3. Sinal de alerta";
         ui->statusBar->showMessage("Comando 3: Luz Amarela intermitente");
 
-        tempo = new QTimer(this);
-        connect(tempo,SIGNAL(timeout()),this,SLOT(AmareloIntermitente()));
-        tempo->start(250);
+        SinalDeAlerta = new QTimer(this);
+        connect(SinalDeAlerta,SIGNAL(timeout()),this,SLOT(AmareloIntermitente()));
+        SinalDeAlerta->start(100);
     }
 
     if(ui->cmb_comandos->currentText() == "4. Abertura do cruzamento de pedestres"){
