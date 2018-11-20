@@ -48,11 +48,14 @@ public slots:
 
     void TestaFechamento();
 
+    void FechaPedestre();
+
     void on_bt_acionar_clicked();
 
     void delay(int milisegundos);
 
     void LiberaObjetos();
+
 
 public:
     Ui::Controle *ui;
