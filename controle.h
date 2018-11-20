@@ -31,6 +31,10 @@ public slots:
 
     void Semaforos_6_7();
 
+    void TestaAbertura();
+
+    void TestaFechamento();
+
 private slots:
     void on_bt_acionar_clicked();
 
@@ -43,6 +47,8 @@ private:
     QTimer *ConfigInicial_Semaforos_6_7;
     QTimer *ConfigInicial_Pedestre_1_2_3;
     QTimer *ConfigInicial_Pedestre_6_7;
+    QTimer *TestaFechamentoCruzamento;
+    QTimer *TestaAberturaCruzamento;
 
 };
 
