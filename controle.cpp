@@ -7,20 +7,20 @@ Controle::Controle(QWidget *parent) :
 {
     ui->setupUi(this);
 
-        ConfigInicial_Semaforos_1_2_3_4 = new QTimer(this);
-        connect(ConfigInicial_Semaforos_1_2_3_4,SIGNAL(timeout()),this,SLOT(Semaforos_1_2_3_4()));
-        ConfigInicial_Semaforos_1_2_3_4->start(100);
-        boolConfigInicial_Semaforos_1_2_3_4 = true;
+    ConfigInicial_Semaforos_1_2_3_4 = new QTimer(this);
+    connect(ConfigInicial_Semaforos_1_2_3_4,SIGNAL(timeout()),this,SLOT(Semaforos_1_2_3_4()));
+    ConfigInicial_Semaforos_1_2_3_4->start(100);
+    boolConfigInicial_Semaforos_1_2_3_4 = true;
 
-        ConfigInicial_Semaforos_6_7 = new QTimer(this);
-        connect(ConfigInicial_Semaforos_6_7,SIGNAL(timeout()),this,SLOT(Semaforos_6_7()));
-        ConfigInicial_Semaforos_6_7->start(100);
-        boolConfigInicial_Semaforos_6_7 = true;
+    ConfigInicial_Semaforos_6_7 = new QTimer(this);
+    connect(ConfigInicial_Semaforos_6_7,SIGNAL(timeout()),this,SLOT(Semaforos_6_7()));
+    ConfigInicial_Semaforos_6_7->start(100);
+    boolConfigInicial_Semaforos_6_7 = true;
 
-        ConfigInicial_Pedestre_1_2_3 = new QTimer(this);
-        connect(ConfigInicial_Pedestre_1_2_3,SIGNAL(timeout()),this,SLOT(SemaforosPedestre_1_2_3()));
-        ConfigInicial_Pedestre_1_2_3->start(200);
-        boolConfigInicial_Pedestre_1_2_3 = true;
+    ConfigInicial_Pedestre_1_2_3 = new QTimer(this);
+    connect(ConfigInicial_Pedestre_1_2_3,SIGNAL(timeout()),this,SLOT(SemaforosPedestre_1_2_3()));
+    ConfigInicial_Pedestre_1_2_3->start(200);
+    boolConfigInicial_Pedestre_1_2_3 = true;
 
 }
 
@@ -60,10 +60,10 @@ void Controle::SemaforosPedestre_1_2_3(){
     QPixmap semaforoPedestreVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVermelho.png");
     QPixmap semaforoPedestreDesabilitado("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreDesabilitado.png");
 
-        ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreVermelho);
-        delay(100);
-        ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreDesabilitado);
-        delay(100);
+    ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreVermelho);
+    delay(100);
+    ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreDesabilitado);
+    delay(100);
 }
 
 void Controle::SemaforosPedestre_6_7(){
