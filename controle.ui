@@ -101,6 +101,11 @@
       <string>8. Fechamento do cruzamento de veículos para virar à esquerda</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>9. Configuração Padrão</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="bt_acionar">
     <property name="geometry">

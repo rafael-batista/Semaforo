@@ -6,22 +6,7 @@ Controle::Controle(QWidget *parent) :
     ui(new Ui::Controle)
 {
     ui->setupUi(this);
-
-    ConfigInicial_Semaforos_1_2_3_4 = new QTimer(this);
-    connect(ConfigInicial_Semaforos_1_2_3_4,SIGNAL(timeout()),this,SLOT(Semaforos_1_2_3_4()));
-    ConfigInicial_Semaforos_1_2_3_4->start(100);
-    boolConfigInicial_Semaforos_1_2_3_4 = true;
-
-    ConfigInicial_Semaforos_6_7 = new QTimer(this);
-    connect(ConfigInicial_Semaforos_6_7,SIGNAL(timeout()),this,SLOT(Semaforos_6_7()));
-    ConfigInicial_Semaforos_6_7->start(100);
-    boolConfigInicial_Semaforos_6_7 = true;
-
-    ConfigInicial_Pedestre_1_2_3 = new QTimer(this);
-    connect(ConfigInicial_Pedestre_1_2_3,SIGNAL(timeout()),this,SLOT(SemaforosPedestre_1_2_3()));
-    ConfigInicial_Pedestre_1_2_3->start(200);
-    boolConfigInicial_Pedestre_1_2_3 = true;
-
+    ConfigDefault();
 }
 
 Controle::~Controle()
@@ -29,16 +14,47 @@ Controle::~Controle()
     delete ui;
 }
 
-void Controle::Semaforos_1_2_3_4(){
-    QPixmap semaforoVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoVermelho.png");
-    QPixmap semaforoAmarelo("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoAmarelo.png");
-    QPixmap semaforoVerde("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoVerde.png");
+void Controle::ConfigDefault(){
+    ConfigInicial_SemaforosCruzamento = new QTimer(this);
+    connect(ConfigInicial_SemaforosCruzamento,SIGNAL(timeout()),this,SLOT(SemaforosCruzamento()));
+    ConfigInicial_SemaforosCruzamento->start(100);
+    boolConfigInicial_SemaforosCruzamento = true;
+
+    //    ConfigInicial_Semaforos_6_7 = new QTimer(this);
+    //    connect(ConfigInicial_Semaforos_6_7,SIGNAL(timeout()),this,SLOT(Semaforos_6_7()));
+    //    ConfigInicial_Semaforos_6_7->start(100);
+    //    boolConfigInicial_Semaforos_6_7 = true;
+
+    //    ConfigInicial_Pedestre_1_2_3 = new QTimer(this);
+    //    connect(ConfigInicial_Pedestre_1_2_3,SIGNAL(timeout()),this,SLOT(SemaforosPedestre_1_2_3()));
+    //    ConfigInicial_Pedestre_1_2_3->start(200);
+    //    boolConfigInicial_Pedestre_1_2_3 = true;
+}
+
+void Controle::SemaforosCruzamento(){
+    QPixmap semaforoVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoVermelho.png");
+    QPixmap semaforoAmarelo("D:/Rafael Documentos/Documents/Git/resources/semaforoAmarelo.png");
+    QPixmap semaforoVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoVerde.png");
+
+    QPixmap semaforoPedestreVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVerde.png");
+    QPixmap semaforoPedestreVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVermelho.png");
+    QPixmap semaforoPedestreDesabilitado("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreDesabilitado.png");
 
     ui->lbl_semaforo1->setPixmap(semaforoVerde);
     ui->lbl_semaforo2->setPixmap(semaforoVerde);
     ui->lbl_semaforo3_norte->setPixmap(semaforoVerde);
     ui->lbl_semaforo3_sul->setPixmap(semaforoVerde);
     ui->lbl_semaforo4->setPixmap(semaforoVerde);
+    ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreVermelho);
+    ui->lbl_semaforoPedestre2->setPixmap(semaforoPedestreVermelho);
+    ui->lbl_semaforoPedestre3_norte->setPixmap(semaforoPedestreVermelho);
+    ui->lbl_semaforoPedestre3_sul->setPixmap(semaforoPedestreVermelho);
+    ui->lbl_semaforoPedestre4->setPixmap(semaforoPedestreVermelho);
+
+    ui->lbl_semaforo6->setPixmap(semaforoVermelho);
+    ui->lbl_semaforo7->setPixmap(semaforoVermelho);
+    ui->lbl_semaforoPedestre6->setPixmap(semaforoPedestreVerde);
+    ui->lbl_semaforoPedestre7->setPixmap(semaforoPedestreVerde);
     delay(1500);
 
     ui->lbl_semaforo1->setPixmap(semaforoAmarelo);
@@ -48,17 +64,57 @@ void Controle::Semaforos_1_2_3_4(){
     ui->lbl_semaforo4->setPixmap(semaforoAmarelo);
     delay(750);
 
+    for (int i=0; i<5;i++) {
+        ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreDesabilitado);
+        ui->lbl_semaforoPedestre2->setPixmap(semaforoPedestreDesabilitado);
+        ui->lbl_semaforoPedestre3_norte->setPixmap(semaforoPedestreDesabilitado);
+        ui->lbl_semaforoPedestre3_sul->setPixmap(semaforoPedestreDesabilitado);
+        ui->lbl_semaforoPedestre4->setPixmap(semaforoPedestreDesabilitado);
+        delay(100);
+        ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreVermelho);
+        ui->lbl_semaforoPedestre2->setPixmap(semaforoPedestreVermelho);
+        ui->lbl_semaforoPedestre3_norte->setPixmap(semaforoPedestreVermelho);
+        ui->lbl_semaforoPedestre3_sul->setPixmap(semaforoPedestreVermelho);
+        ui->lbl_semaforoPedestre4->setPixmap(semaforoPedestreVermelho);
+        delay(100);
+    }
+
+    ui->lbl_semaforo6->setPixmap(semaforoVerde);
+    ui->lbl_semaforo7->setPixmap(semaforoVerde);
+    ui->lbl_semaforoPedestre6->setPixmap(semaforoPedestreVermelho);
+    ui->lbl_semaforoPedestre7->setPixmap(semaforoPedestreVermelho);
+
     ui->lbl_semaforo1->setPixmap(semaforoVermelho);
     ui->lbl_semaforo2->setPixmap(semaforoVermelho);
     ui->lbl_semaforo3_norte->setPixmap(semaforoVermelho);
     ui->lbl_semaforo3_sul->setPixmap(semaforoVermelho);
     ui->lbl_semaforo4->setPixmap(semaforoVermelho);
+
+    ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreVerde);
+    ui->lbl_semaforoPedestre2->setPixmap(semaforoPedestreVerde);
+    ui->lbl_semaforoPedestre3_norte->setPixmap(semaforoPedestreVerde);
+    ui->lbl_semaforoPedestre3_sul->setPixmap(semaforoPedestreVerde);
+    ui->lbl_semaforoPedestre4->setPixmap(semaforoPedestreVerde);
+
+    delay(750);
+    ui->lbl_semaforo6->setPixmap(semaforoAmarelo);
+    ui->lbl_semaforo7->setPixmap(semaforoAmarelo);
+
+    for (int i=0; i<5;i++) {
+        ui->lbl_semaforoPedestre6->setPixmap(semaforoPedestreDesabilitado);
+        ui->lbl_semaforoPedestre7->setPixmap(semaforoPedestreDesabilitado);
+        delay(100);
+        ui->lbl_semaforoPedestre6->setPixmap(semaforoPedestreVermelho);
+        ui->lbl_semaforoPedestre7->setPixmap(semaforoPedestreVermelho);
+        delay(100);
+    }
+
 }
 
 void Controle::SemaforosPedestre_1_2_3(){
-    QPixmap semaforoPedestreVerde("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVerde.png");
-    QPixmap semaforoPedestreVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVermelho.png");
-    QPixmap semaforoPedestreDesabilitado("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreDesabilitado.png");
+    QPixmap semaforoPedestreVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVerde.png");
+    QPixmap semaforoPedestreVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVermelho.png");
+    QPixmap semaforoPedestreDesabilitado("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreDesabilitado.png");
 
     ui->lbl_semaforoPedestre1->setPixmap(semaforoPedestreVermelho);
     delay(100);
@@ -67,16 +123,16 @@ void Controle::SemaforosPedestre_1_2_3(){
 }
 
 void Controle::SemaforosPedestre_6_7(){
-    QPixmap semaforoPedestreVerde("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVerde.png");
-    QPixmap semaforoPedestreVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVermelho.png");
+    QPixmap semaforoPedestreVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVerde.png");
+    QPixmap semaforoPedestreVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVermelho.png");
 
 
 }
 
 void Controle::Semaforos_6_7(){
-    QPixmap semaforoVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoVermelho.png");
-    QPixmap semaforoAmarelo("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoAmarelo.png");
-    QPixmap semaforoVerde("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoVerde.png");
+    QPixmap semaforoVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoVermelho.png");
+    QPixmap semaforoAmarelo("D:/Rafael Documentos/Documents/Git/resources/semaforoAmarelo.png");
+    QPixmap semaforoVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoVerde.png");
 
     ui->lbl_semaforo6->setPixmap(semaforoVermelho);
     ui->lbl_semaforo7->setPixmap(semaforoVermelho);
@@ -97,12 +153,12 @@ void Controle::ConfiguracaoInicial(){
 
 //1. o fechamento do cruzamento de veículos (Luz amarela e posterior Luz Vermelho)
 void Controle::TestaFechamento(){
-    QPixmap semaforoVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoVermelho.png");
-    QPixmap semaforoAmarelo("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoAmarelo.png");
-    QPixmap semaforoVerde("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoVerde.png");
+    QPixmap semaforoVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoVermelho.png");
+    QPixmap semaforoAmarelo("D:/Rafael Documentos/Documents/Git/resources/semaforoAmarelo.png");
+    QPixmap semaforoVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoVerde.png");
 
-    QPixmap semaforoPedestreVerde("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVerde.png");
-    QPixmap semaforoPedestreVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVermelho.png");
+    QPixmap semaforoPedestreVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVerde.png");
+    QPixmap semaforoPedestreVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVermelho.png");
 
     ui->lbl_semaforo1->setPixmap(semaforoAmarelo);
     ui->lbl_semaforo2->setPixmap(semaforoAmarelo);
@@ -158,12 +214,12 @@ void Controle::TestaFechamento(){
 
 //2. a abertura do cruzamento de veículos (Luz Verde)
 void Controle::TestaAbertura(){
-    QPixmap semaforoVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoVermelho.png");
-    QPixmap semaforoAmarelo("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoAmarelo.png");
-    QPixmap semaforoVerde("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoVerde.png");
+    QPixmap semaforoVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoVermelho.png");
+    QPixmap semaforoAmarelo("D:/Rafael Documentos/Documents/Git/resources/semaforoAmarelo.png");
+    QPixmap semaforoVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoVerde.png");
 
-    QPixmap semaforoPedestreVerde("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVerde.png");
-    QPixmap semaforoPedestreVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVermelho.png");
+    QPixmap semaforoPedestreVerde("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVerde.png");
+    QPixmap semaforoPedestreVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVermelho.png");
 
     ui->lbl_semaforo1->setPixmap(semaforoVerde);
     ui->lbl_semaforo2->setPixmap(semaforoVerde);
@@ -219,8 +275,8 @@ void Controle::TestaAbertura(){
 
 void Controle::AmareloIntermitente()
 {
-    QPixmap semaforoAmarelo("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoAmarelo.png");
-    QPixmap semaforoPedestreVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVermelho.png");
+    QPixmap semaforoAmarelo("D:/Rafael Documentos/Documents/Git/resources/semaforoAmarelo.png");
+    QPixmap semaforoPedestreVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVermelho.png");
     //Muda os semaforos para amarelo e os semaforos de pedestre para vermelho
     ui->lbl_semaforo1->setPixmap(semaforoAmarelo);
     ui->lbl_semaforo2->setPixmap(semaforoAmarelo);
@@ -239,8 +295,8 @@ void Controle::AmareloIntermitente()
     ui->lbl_semaforoPedestre7->setPixmap(semaforoPedestreVermelho);
     delay(10);
 
-    QPixmap semaforoDesligado("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoDesligado.png");
-    QPixmap semaforoPedestreDesligado("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreDesabilitado.png");
+    QPixmap semaforoDesligado("D:/Rafael Documentos/Documents/Git/resources/semaforoDesligado.png");
+    QPixmap semaforoPedestreDesligado("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreDesabilitado.png");
     //Muda os semaforos para a imagem desabilitada
     ui->lbl_semaforo1->setPixmap(semaforoDesligado);
     ui->lbl_semaforo2->setPixmap(semaforoDesligado);
@@ -262,8 +318,8 @@ void Controle::AmareloIntermitente()
 
 void Controle::FechaPedestre()
 {
-    QPixmap semaforoPedestreVermelho("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreVermelho.png");
-    QPixmap semaforoPedestreDesligado("C:\\Users\\gaber\\Documents\\GitHub\\Semaforo\\resources\\semaforoPedestreDesabilitado.png");
+    QPixmap semaforoPedestreVermelho("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreVermelho.png");
+    QPixmap semaforoPedestreDesligado("D:/Rafael Documentos/Documents/Git/resources/semaforoPedestreDesabilitado.png");
 
     int i;
 
@@ -309,9 +365,9 @@ void Controle::LiberaObjetos(){
         boolConfigInicial_Pedestre_6_7 = false;
     }
 
-    if(boolConfigInicial_Semaforos_1_2_3_4){
-        delete ConfigInicial_Semaforos_1_2_3_4;
-        boolConfigInicial_Semaforos_1_2_3_4 = false;
+    if(boolConfigInicial_SemaforosCruzamento){
+        delete ConfigInicial_SemaforosCruzamento;
+        boolConfigInicial_SemaforosCruzamento = false;
     }
 
     if(boolConfigInicial_Semaforos_6_7){
@@ -338,10 +394,10 @@ void Controle::LiberaObjetos(){
         delete ConfigInicial_Pedestre_1_2_3;
         boolConfigInicial_Pedestre_1_2_3 = false;
     }
-    if(boolFechaPedestreCruzamento){
-        delete FechaPedestreCruzamento;
-        boolFechaPedestreCruzamento = false;
-    }
+    //    if(boolFechaPedestreCruzamento){
+    //        delete FechaPedestreCruzamento;
+    //        boolFechaPedestreCruzamento = false;
+    //    }
 }
 
 void Controle::on_bt_acionar_clicked()
@@ -396,10 +452,10 @@ void Controle::on_bt_acionar_clicked()
 
         FechaPedestre();
 
-        ConfigInicial_Semaforos_1_2_3_4 = new QTimer(this);
-        connect(ConfigInicial_Semaforos_1_2_3_4,SIGNAL(timeout()),this,SLOT(Semaforos_1_2_3_4()));
-        ConfigInicial_Semaforos_1_2_3_4->start(100);
-        boolConfigInicial_Semaforos_1_2_3_4 = true;
+        ConfigInicial_SemaforosCruzamento = new QTimer(this);
+        connect(ConfigInicial_SemaforosCruzamento,SIGNAL(timeout()),this,SLOT(SemaforosCruzamento()));
+        ConfigInicial_SemaforosCruzamento->start(100);
+        boolConfigInicial_SemaforosCruzamento = true;
 
         ConfigInicial_Semaforos_6_7 = new QTimer(this);
         connect(ConfigInicial_Semaforos_6_7,SIGNAL(timeout()),this,SLOT(Semaforos_6_7()));
@@ -427,11 +483,20 @@ void Controle::on_bt_acionar_clicked()
         qDebug() << "8. Fechamento do cruzamento de veículos para virar à esquerda";
         ui->statusBar->showMessage("Comando 8: Apenas para o cruzamento entre os pontos 2 e 6");
     }
+
+    if(ui->cmb_comandos->currentText() == "9. Configuração Padrão"){
+        LiberaObjetos();
+
+        qDebug() << "Configuração Padrão do trecho...";
+        ui->statusBar->showMessage("Configuração Padrão do trecho...");
+
+        ConfigDefault();
+    }
 }
 
-void Controle::delay(int milisegundos)
+void Controle::delay(int milissegundos)
 {
-    QTime dieTime = QTime::currentTime().addMSecs( milisegundos );
+    QTime dieTime = QTime::currentTime().addMSecs( milissegundos*2 );
     while( QTime::currentTime() < dieTime )
     {
         QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );
