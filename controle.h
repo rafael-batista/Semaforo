@@ -18,7 +18,7 @@ class Controle : public QMainWindow
 public:
     bool boolConfigInicial_Pedestre_1_2_3 = false;
     bool boolConfigInicial_Pedestre_6_7 = false;
-    bool boolConfigInicial_SemaforosCruzamento = false;
+    bool boolConfigInicial_Comando2 = false;
     bool boolConfigInicial_Semaforos_6_7 = false;
     bool boolSinalDeAlerta = false;
     bool boolComando1Cruzamento = false;
@@ -32,7 +32,7 @@ public slots:
     void Comando1Fechamento();
     void Comando1();
     void AmareloIntermitente();
-    void SemaforosCruzamento();
+    void Comando2();
     void Semaforos_6_7();
     void SemaforosPedestre_1_2_3();
     void FechaPedestre();
@@ -43,7 +43,7 @@ public slots:
 public:
     Ui::Controle *ui;
     QTimer *SinalDeAlerta;
-    QTimer *ConfigInicial_SemaforosCruzamento;
+    QTimer *ConfigInicial_Comando2;
     QTimer *ConfigInicial_Semaforos_6_7;
     QTimer *ConfigInicial_Pedestre_1_2_3;
     QTimer *ConfigInicial_Pedestre_6_7;

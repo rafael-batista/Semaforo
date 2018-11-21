@@ -46,7 +46,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoDesligado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoVermelho.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -113,7 +113,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoDesligado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoVermelho.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -132,7 +132,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoDesligado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoVermelho.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -151,7 +151,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoDesligado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoVermelho.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -170,7 +170,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoDesligado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoVermelho.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -189,7 +189,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoDesligado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoVermelho.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -208,7 +208,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoDesligado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoVermelho.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -265,7 +265,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoPedestreDesabilitado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoPedestreVerde.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -284,7 +284,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/resources/semaforoPedestreDesabilitado.png</pixmap>
+     <pixmap resource="resource.qrc">:/resources/semaforoPedestreVerde.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
