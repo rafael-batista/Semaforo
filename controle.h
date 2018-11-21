@@ -6,9 +6,6 @@
 #include <QPixmap>
 #include <QTimer>
 #include <QTime>
-#include <thread>
-
-using namespace std;
 
 namespace Ui {
 class Controle;
@@ -24,8 +21,7 @@ public:
     bool boolConfigInicial_SemaforosCruzamento = false;
     bool boolConfigInicial_Semaforos_6_7 = false;
     bool boolSinalDeAlerta = false;
-    bool boolTestaFechamentoCruzamento = false;
-    bool boolTestaAberturaCruzamento = false;
+    bool boolComando1Cruzamento = false;
 
 public:
     explicit Controle(QWidget *parent = nullptr);
@@ -33,31 +29,16 @@ public:
 
 public slots:
     void ConfigDefault();
-
+    void Comando1Fechamento();
+    void Comando1();
     void AmareloIntermitente();
-
-    void ConfiguracaoInicial();
-
     void SemaforosCruzamento();
-
     void Semaforos_6_7();
-
     void SemaforosPedestre_1_2_3();
-
-    void SemaforosPedestre_6_7();
-
-    void TestaAbertura();
-
-    void TestaFechamento();
-
     void FechaPedestre();
-
     void on_bt_acionar_clicked();
-
     void delay(int milissegundos);
-
     void LiberaObjetos();
-
 
 public:
     Ui::Controle *ui;
@@ -66,8 +47,7 @@ public:
     QTimer *ConfigInicial_Semaforos_6_7;
     QTimer *ConfigInicial_Pedestre_1_2_3;
     QTimer *ConfigInicial_Pedestre_6_7;
-    QTimer *TestaFechamentoCruzamento;
-    QTimer *TestaAberturaCruzamento;
+    QTimer *Comando1Cruzamento;
 };
 
 #endif // CONTROLE_H

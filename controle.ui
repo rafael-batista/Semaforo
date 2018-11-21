@@ -63,12 +63,12 @@
     </property>
     <item>
      <property name="text">
-      <string>1. Fechamento do cruzamento de veículos</string>
+      <string>1. Fechamento do cruzamento de veículos vias 1, 2, 3 e 4</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>2. Abertura do cruzamento de veículos</string>
+      <string>2. Abertura do cruzamento de veículos vias 1, 2, 3 e 4</string>
      </property>
     </item>
     <item>
@@ -78,32 +78,12 @@
     </item>
     <item>
      <property name="text">
-      <string>4. Abertura do cruzamento de pedestres</string>
+      <string>4. Abertura do cruzamento de pedestres vias 1, 2, 3 e 4</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>5. Fechamento do cruzamento de pedestres</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>6. Sinal de alerta para fechamento do cruzamento de pedestres</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>7. Abertura do cruzamento de veículos parar virar à esquerda</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>8. Fechamento do cruzamento de veículos para virar à esquerda</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>9. Configuração Padrão</string>
+      <string>5. Fechamento do cruzamento de pedestres vias 1, 2, 3 e 4</string>
      </property>
     </item>
    </widget>
