@@ -16,10 +16,7 @@ class Controle : public QMainWindow
     Q_OBJECT
 
 public:
-    bool boolConfigInicial_Pedestre_1_2_3 = false;
-    bool boolConfigInicial_Pedestre_6_7 = false;
     bool boolConfigInicial_Comando2 = false;
-    bool boolConfigInicial_Semaforos_6_7 = false;
     bool boolSinalDeAlerta = false;
     bool boolComando1Cruzamento = false;
 
@@ -33,9 +30,8 @@ public slots:
     void Comando1();
     void AmareloIntermitente();
     void Comando2();
-    void Semaforos_6_7();
-    void SemaforosPedestre_1_2_3();
-    void FechaPedestre();
+    void Comando4();
+    void Comando5();
     void on_bt_acionar_clicked();
     void delay(int milissegundos);
     void LiberaObjetos();

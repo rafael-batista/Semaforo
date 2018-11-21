@@ -55,7 +55,7 @@
    <widget class="QComboBox" name="cmb_comandos">
     <property name="geometry">
      <rect>
-      <x>385</x>
+      <x>370</x>
       <y>410</y>
       <width>430</width>
       <height>30</height>
@@ -90,7 +90,7 @@
    <widget class="QPushButton" name="bt_acionar">
     <property name="geometry">
      <rect>
-      <x>815</x>
+      <x>810</x>
       <y>410</y>
       <width>80</width>
       <height>30</height>
